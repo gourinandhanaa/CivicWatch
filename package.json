@@ -4,14 +4,15 @@
   "description": "civicwatch using mern stack",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",  // Changed from nodemon (nodemon is for development)
-    "dev": "set NODE_ENV=development&& npx nodemon backend/server.js",
-    "prod": "set NODE_ENV=production&& node backend/server.js",
-    "seeder": "node backend/utils/seeder.js",
-    "build": "cd frontend && npm install && npm run build",  // This is correct but needs to run before start
-    "install-and-build": "npm install && npm run build",  // New script to ensure frontend builds
-    "render-build": "npm install && cd frontend && npm install && npm run build"  // Render-specific build
-  },
+  "start": "node backend/server.js",
+  "dev": "set NODE_ENV=development&& npx nodemon backend/server.js",
+  "prod": "set NODE_ENV=production&& node backend/server.js",
+  "seeder": "node backend/utils/seeder.js",
+  "build": "cd frontend && npm install && npm run build",
+  "install-and-build": "npm install && npm run build",
+  "render-build": "npm install && cd frontend && npm install && npm run build"
+}
+,
   "author": "Gouri Nandana",
   "license": "ISC",
   "dependencies": {
