@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Leaking water pipe",
+    "description": "There is a leaking pipe near Block A.",
+    "category": "Water",
+    "location": "Block A, Street 2",
+    "status": "Pending",
+    "reporterName": "Aarav",
+    "reporterMobile": "9876543222",
+    "severity": 3,
+    "images": [
+      { "image": "pipe_leak_123.jpg" }
+    ]
+  },
+  {
+    "title": "Street light not working",
+    "description": "Street light in front of park is not functioning.",
+    "category": "Electricity",
+    "location": "Green Park Avenue",
+    "status": "Pending",
+    "reporterName": "Riya",
+    "reporterMobile": "9812345678",
+    "severity": 2,
+    "images": [
+      { "image": "light_out_456.jpg" }
+    ]
+  },
+  {
+    "title": "Garbage not collected",
+    "description": "Garbage bins near Market Street are overflowing.",
+    "category": "Sanitation",
+    "location": "Market Street",
+    "status": "Pending",
+    "reporterName": "Karan",
+    "reporterMobile": "9871234560",
+    "severity": 4,
+    "images": [
+      { "image": "garbage_789.jpg" }
+    ]
+  },
+  {
+    "title": "Pothole on main road",
+    "description": "Large pothole causing traffic issues near junction.",
+    "category": "Road",
+    "location": "Main Road Junction",
+    "status": "Pending",
+    "reporterName": "Sneha",
+    "reporterMobile": "9123456789",
+    "severity": 5,
+    "images": [
+      { "image": "pothole_101.jpg" }
+    ]
+  },
+  {
+    "title": "No water supply",
+    "description": "Residents have not received water since morning.",
+    "category": "Water",
+    "location": "Sunrise Apartments",
+    "status": "Pending",
+    "reporterName": "Vikram",
+    "reporterMobile": "9000001234",
+    "severity": 4,
+    "images": [
+      { "image": "no_water_202.jpg" }
+    ]
+  }
+]
