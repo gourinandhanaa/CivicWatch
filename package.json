@@ -4,7 +4,7 @@
   "description": "civicwatch using mern stack",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build && node backend/server.js",
+    "start": "node backend/server.js",
     "dev": "set NODE_ENV=development&& npx nodemon backend/server.js",
     "prod": "set NODE_ENV=production&& node backend/server.js",
     "seeder": "node backend/utils/seeder.js",
