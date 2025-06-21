@@ -16,12 +16,12 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-// ❌ Removed frontend build serving logic — not needed on Render for backend-only
+// ❌ Frontend serving logic removed — handled by Render's static site
 
 // Start the server
 const PORT = process.env.PORT || 8000;
 const server = app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT} [${process.env.NODE_ENV}]`);
+  console.log(`✅ Server running on http://localhost:${PORT} [${process.env.NODE_ENV}]`);
 });
 
 // Handle unhandled promise rejections
