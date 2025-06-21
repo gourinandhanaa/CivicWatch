@@ -1,31 +1,28 @@
 const dotenv = require('dotenv');
 const path = require('path');
-const express = require('express');
+
+// Load environment variables
+dotenv.config({ path: path.join(__dirname, 'config', 'config.env') });
+
 const app = require('./app');
 const connectDatabase = require('./config/database');
-
-// Load environment variables from config.env
-dotenv.config({ path: path.join(__dirname, 'config', 'config.env') });
 
 // Connect to MongoDB
 connectDatabase();
 
-// Handle uncaught exceptions
+// Handle uncaught exceptions (e.g., undefined variable)
 process.on('uncaughtException', (err) => {
-  console.error('Uncaught Exception:', err.message);
   process.exit(1);
 });
-
-// ❌ Frontend serving logic removed — handled by Render's static site
 
 // Start the server
 const PORT = process.env.PORT || 8000;
 const server = app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT} [${process.env.NODE_ENV}]`);
+  console.log(`Server running on http://localhost:${PORT} [${process.env.NODE_ENV}]`);
 });
 
-// Handle unhandled promise rejections
+// Handle unhandled promise rejections (e.g., DB fail)
 process.on('unhandledRejection', (err) => {
-  console.error('Unhandled Rejection:', err.message);
+  console.error(' Unhandled Rejection:', err.message);
   server.close(() => process.exit(1));
 });
