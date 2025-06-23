@@ -7,21 +7,11 @@ const APIFeatures = require('../utils/apiFeatures');
 exports.getIssue = async (req, res, next) => {
   try {
     const resPerPage = 4;
-
-    // Step 1: Build the initial query using filters and search
     const apiFeatures = new APIFeatures(Issue.find(), req.query).search().filter();
-
-    // Clone the query to count before pagination
     const queryForCount = apiFeatures.query;
-
-    // Step 2: Apply pagination after count
     apiFeatures.paginate(resPerPage);
     const issues = await apiFeatures.query;
-
-    // Step 3: Get total filtered count (before pagination)
     const totalCount = await Issue.countDocuments(queryForCount.getQuery());
-
-    // Step 4: Send response matching frontend expectations
     res.status(200).json({
       success: true,
       reports: issues,
@@ -35,7 +25,7 @@ exports.getIssue = async (req, res, next) => {
 
 
 
-// 🆕 Create a new issue  URI : /api/v1/issue/new
+// Create a new issue  URI : /api/v1/issue/new
 exports.newIssue = catchAsyncError(async (req, res, next) => {
   if (!req.user || !req.user._id) {
     return res.status(401).json({ success: false, message: "Unauthorized user" });
